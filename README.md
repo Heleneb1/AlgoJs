@@ -1,1 +1,2 @@
-Algorithm exercises for train
+Algorithm exercises to practice , Algo Chill 😉
+

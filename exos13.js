@@ -195,19 +195,23 @@
 // console.log(rgb(173, 255, 47)); //ADFF2F
 
 function add(n) {
-
-    for (let i = 0; i < n; i++) {
-        if (n <= n[0]) {
-            return n[0];
-        } else if (n > n[0] && n[i] < n[i + 1]) {
-            return n.reduce((a, b) => a + b);
+    // Fonction interne pour gérer l'ajout de nombres
+    const next = (num) => {
+        // Si un nombre est passé, additionne à n
+        if (num !== undefined) {
+            return add(n + num); // Rappelle add avec la nouvelle somme
         }
-    }
+        return n; // Si aucun nombre n'est passé, retourne la somme
+    };
+
+    // Redéfinition de toString pour retourner la somme finale
+    next.toString = () => n; // Redéfinit la méthode toString pour retourner n
+
+    return next; // Retourne la fonction next
 }
-console.log(add(1)()); // 1
+
+// Utilisation
 console.log(add(1)(2)); // 3
 console.log(add(1)(2)(3)); // 6
 console.log(add(1)(2)(3)(4)); // 10
-console.log(add(1)(2)(3)(4)(5)); // 15
-console.log(add(5)(-2)(3)); // 6 (5 - 2 + 3)
-console.log(add(10)(20)(30)(-5)); // 55 (10 + 20 + 30 - 5)
+console.log(add(1)); // 1

@@ -129,17 +129,17 @@
 
 // Exercice 5 : Trouver le Nombre Manquant
 // Écris une fonction findMissingNumber(arr) qui prend un tableau d'entiers de 0 à n et qui a un nombre manquant. La fonction doit retourner le nombre manquant.
-// const findMissingNumber = (arr) => {
-//     let missing = 0
-//     for (let i = 0; i <= arr.length; i++) {//let i =0; i<arr.length +1; i++
-//         if (arr.indexOf(i) === -1) {//Dans ta fonction findMissingNumber, tu utilises arr.indexOf(i). Cela signifie que tu cherches si le nombre i est présent dans le tableau arr. Si indexOf(i) retourne -1, cela signifie que i n'est pas dans le tableau, ce qui indique que c'est le nombre manquant.
-//             return i
-//         }
-//     }
+const findMissingNumber = (arr) => {
+    let missing = 0
+    for (let i = 0; i <= arr.length; i++) {//let i =0; i<arr.length +1; i++
+        if (arr.indexOf(i) === -1) {//Dans ta fonction findMissingNumber, tu utilises arr.indexOf(i). Cela signifie que tu cherches si le nombre i est présent dans le tableau arr. Si indexOf(i) retourne -1, cela signifie que i n'est pas dans le tableau, ce qui indique que c'est le nombre manquant.
+            return i
+        }
+    }
 
 
-// }
-// console.log(findMissingNumber([0, 1, 2, 3, 5])); // 4
+}
+console.log(findMissingNumber([0, 1, 2, 3, 5])); // 4
 // console.log(findMissingNumber([1, 2, 3, 5, 0])); // 4
 
 
